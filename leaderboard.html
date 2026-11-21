@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="favicon.svg">
+<title>Community Builds — DIY &amp; Crafts</title>
+<meta name="description" content="Your saved DIY &amp; Crafts projects, stored in your browser. Review what you plan to build next.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="index.html" aria-label="Home"><img src="assets/img/logo.svg" alt="DIY &amp; Crafts icon"><span>DIY &amp; Crafts</span></a>
+    <div class="menu" data-nav-menu>
+      <a href="index.html" >Home</a>
+      <a href="game.html" >Project Ideas</a>
+      <a href="leaderboard.html" style='opacity:1;font-weight:800'>Community Builds</a>
+      <a href="services.html" >Workshops</a>
+      <a href="about.html" >About</a>
+      <a href="blog.html" >Blog</a>
+      <a href="faq.html" >FAQ</a>
+      <a href="privacy.html" >Privacy</a>
+      <a href="terms.html" >Terms</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="right"><a class="btn ghost" data-nav-toggle>Menu</a><a class="btn" href="game.html">Browse Ideas</a></div>
+  </div>
+</nav>
+
+<header class="hero"><div class="container"><h1>Community Builds</h1><p>Your saved projects, kept in this browser only. Nothing is uploaded.</p></div></header>
+<section class="section container"><div class="card"><div id="builds">Loading&hellip;</div>
+<div style="height:16px"></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+  <button class="btn ghost" id="btn-clear">Clear My List</button>
+  <a class="btn" href="game.html">Find More Projects</a>
+</div></div></section>
+<script>
+(function(){
+  var el=document.getElementById('builds');
+  var STORE='dc_build_list';
+  function read(){try{var raw=JSON.parse(localStorage.getItem(STORE)||'[]');return Array.isArray(raw)?raw:[];}catch(e){return [];}}
+  var list=read();
+  if(!list.length){
+    el.innerHTML='<h3>No saved projects yet</h3><p>Open the Project Ideas board and save the projects you want to build. Your list will appear here.</p>';
+  }else{
+    var rows=list.map(function(b,i){
+      var when='';
+      try{when=new Date(b.at).toLocaleString();}catch(e){when='';}
+      return '<tr><td>#'+(i+1)+'</td><td>'+b.name+'</td><td>'+b.cat+'</td><td>'+b.time+'</td><td>'+when+'</td></tr>';
+    }).join('');
+    el.innerHTML='<h3>Saved projects ('+list.length+')</h3><table style="width:100%;margin-top:12px"><thead><tr><th>Rank</th><th>Project</th><th>Category</th><th>Time</th><th>Added</th></tr></thead><tbody>'+rows+'</tbody></table>';
+  }
+  var clear=document.getElementById('btn-clear');
+  if(clear)clear.addEventListener('click',function(){
+    try{localStorage.removeItem(STORE);}catch(e){}
+    location.reload();
+  });
+})();
+</script>
+<footer class="footer"><div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+<div>&copy; 2025 DIY &amp; Crafts. All rights reserved.</div><div style="display:flex;gap:12px;align-items:center"><span class="badge">Ideas &bull; Guides &bull; Community</span></div>
+</div></footer><script src="assets/js/main.js"></script></body></html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="favicon.svg">
+<title>Project Ideas — DIY &amp; Crafts</title>
+<meta name="description" content="Browse the DIY &amp; Crafts project idea board. Pick projects by time, difficulty, and material, then save the ones you want to build.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="index.html" aria-label="Home"><img src="assets/img/logo.svg" alt="DIY &amp; Crafts icon"><span>DIY &amp; Crafts</span></a>
+    <div class="menu" data-nav-menu>
+      <a href="index.html" >Home</a>
+      <a href="game.html" style='opacity:1;font-weight:800'>Project Ideas</a>
+      <a href="leaderboard.html" >Community Builds</a>
+      <a href="services.html" >Workshops</a>
+      <a href="about.html" >About</a>
+      <a href="blog.html" >Blog</a>
+      <a href="faq.html" >FAQ</a>
+      <a href="privacy.html" >Privacy</a>
+      <a href="terms.html" >Terms</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="right"><a class="btn ghost" data-nav-toggle>Menu</a><a class="btn" href="game.html">Browse Ideas</a></div>
+  </div>
+</nav>
+
+<header class="hero"><div class="container"><h1>Project Idea Board</h1><p>Filter by the time you actually have and the tools you own. Click any project to read what it needs.</p>
+<div class="kudos"><span class="pill">Woodworking</span><span class="pill">Textiles</span><span class="pill">Repairs</span><span class="pill">Upcycling</span></div></div></header>
+
+<section class="section container">
+  <div class="card">
+    <p id="cat-note" style="display:none;margin:0 0 14px;"></p>
+    <div class="kudos" style="margin-bottom:16px;">
+      <button class="btn ghost" data-filter="all" style="opacity:1;font-weight:800">All</button>
+      <button class="btn ghost" data-filter="under-2h">Under 2 hours</button>
+      <button class="btn ghost" data-filter="weekend">Weekend</button>
+      <button class="btn ghost" data-filter="beginner">Beginner</button>
+      <button class="btn ghost" data-filter="hand-tools">Hand tools only</button>
+    </div>
+    <div id="idea-grid" class="grid-3" style="gap:14px;"></div>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="card">
+    <h3>How This Board Works</h3>
+    <ul>
+      <li><b>Filter:</b> Use the buttons above to narrow the list by time, difficulty, or tool requirement.</li>
+      <li><b>Save:</b> Click <b>Save to build list</b> on a project to keep it. Saved items appear in your <a href="leaderboard.html">Community Builds</a> page, stored only in this browser.</li>
+      <li><b>Clear:</b> Use <b>Clear list</b> to start over. Nothing is stored on a server, so clearing your browser data also removes it.</li>
+    </ul>
+    <div style="height:12px"></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <button class="btn" id="btn-clear">Clear List</button>
+      <a class="btn ghost" href="blog.html">Read the Guides</a>
+      <a class="btn ghost" href="index.html">Back Home</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+<div>&copy; 2025 DIY &amp; Crafts. All rights reserved.</div><div style="display:flex;gap:12px;align-items:center"><span class="badge">Ideas &bull; Guides &bull; Community</span></div>
+</div></footer><script src="assets/js/main.js"></script><script src="assets/js/game.js"></script></body></html>
